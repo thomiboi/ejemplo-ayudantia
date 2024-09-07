@@ -1,0 +1,29 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarSesionAlert()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center"
+      >Bienvenido {{login.usuario}} <strong></strong
+    ></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-toolbar>
+  <!--Dibujo pestañas con el ion-segment-->
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <!--El valor del value es el que utilizaré para el enrutado
+  Y es el que tomará como parámetro el $event-->
+    <ion-segment-button value="default">
+      <ion-icon name="home"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="options">
+      <ion-icon name="settings"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>
